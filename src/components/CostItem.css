@@ -7,9 +7,6 @@
     background-color: #bd8025;
     width: 95%;
     border-radius: 10px;
-    -webkit-box-shadow: 4px 4px 6px -4px rgba(34, 60, 80, 0.55);
--moz-box-shadow: 4px 4px 6px -4px rgba(34, 60, 80, 0.55);
-box-shadow: 4px 4px 6px -4px rgba(34, 60, 80, 0.55);
   }
   
   .cost-item__description {
