@@ -1,4 +1,5 @@
 import Cost from "./components/Cost";
+import FormaBlock from "./components/FormaBlock";
 
 function App() {
   const costs = [
@@ -20,10 +21,8 @@ function App() {
   ];
   return (
     <div>
-      <h1>Покупки</h1>
-       <div>
+        <FormaBlock  />
         <Cost costs={costs}></Cost>
-       </div>
     </div>
   );
 }
