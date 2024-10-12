@@ -3,7 +3,7 @@ import './Forma.css'
 function Forma() {
   return (
      <form>
-        <div className="newCost_Dateils">
+        <div className="NewCost_Dateils">
             <div className="NewCost_Data">
                 <label>Название</label>
                 <input type="text" />
@@ -16,7 +16,8 @@ function Forma() {
                 <label>Дата</label>
                 <input type="date" />
             </div>
-            <button className="Add">Добавить расходы</button>
+            <button className="add">Добавить расходы</button>
+            <button>Отмена</button>
         </div>
     </form>
   )

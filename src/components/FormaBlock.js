@@ -3,9 +3,8 @@ import './FormaBlock.css'
 
  function FormaBlock() {
    return (
-    <div className="New_cost">
+    <div className="New-cost">
         <Forma></Forma>
-        <button className="Add">LДобавить расходы</button>
     </div>
    )
  }
