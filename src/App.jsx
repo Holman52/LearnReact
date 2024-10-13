@@ -1,5 +1,5 @@
-import Cost from "./components/Cost";
-import FormaBlock from "./components/FormaBlock";
+import Cost from "./components/ui/Cost";
+import FormaBlock from "./components/form/FormaBlock";
 
 function App() {
   const costs = [
