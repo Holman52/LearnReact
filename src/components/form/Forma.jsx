@@ -1,22 +1,56 @@
+import { useState } from 'react'
 import './Forma.css'
 
 function Forma() {
+
+ const [InputProduct, setInputProduct] = useState('');
+ const [InputPrice, setInputPrice] = useState('');
+ const [InputDate, setInputDate] = useState('');
+
+ const productChangeHandler = (event)=>{
+    setInputProduct(event.target.value)
+ };
+ 
+ const priceChangeHandler = (event) =>{
+    setInputPrice(event.target.value)
+ };
+ 
+ const dateChangeHandler = (event)=>{
+    setInputDate(event.target.value)
+ };
+
+ const SubmitHandler = (event) =>{
+    event.preventDefault();
+
+    const costData = {
+        price: InputPrice,
+        product: InputProduct,
+        date: new Date(InputDate)
+    };
+    console.log(costData);
+    setInputProduct('');
+    setInputPrice('');
+    setInputDate('');
+ }
   return (
-     <form>
+     <form onSubmit={SubmitHandler}>
         <div className="NewCost_Dateils">
             <div className="NewCost_Data">
                 <label>Название</label>
-                <input type="text" />
+                <input type="text" value={InputProduct}
+                 onChange={productChangeHandler} />
             </div>
             <div className="NewCost_Data">
                 <label>Цена</label>
-                <input type="number" />
+                <input type="number" value={InputPrice}
+                onChange={priceChangeHandler}/>
             </div>
             <div className="NewCost_Data">
                 <label>Дата</label>
-                <input type="date" />
+                <input type="date" value={InputDate}
+                 onChange={dateChangeHandler} />
             </div>
-            <button className="add">Добавить расходы</button>
+            <button className="add" type='submit'>Добавить расходы</button>
             <button>Отмена</button>
         </div>
     </form>
