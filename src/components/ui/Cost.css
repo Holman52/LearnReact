@@ -5,3 +5,8 @@
     width: 70rem;
     max-width: 95%;
   }
+  .main{
+    width: 70rem;
+    max-width: 95%;
+    margin: 2rem auto;
+  }
