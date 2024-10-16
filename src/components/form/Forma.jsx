@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Forma.css'
 
-function Forma() {
+function Forma(props) {
 
  const [InputProduct, setInputProduct] = useState('');
  const [InputPrice, setInputPrice] = useState('');
@@ -27,7 +27,7 @@ function Forma() {
         product: InputProduct,
         date: new Date(InputDate)
     };
-    console.log(costData);
+    props.onSaveData(costData); // передаёт значение в FormaBlock компонент
     setInputProduct('');
     setInputPrice('');
     setInputDate('');

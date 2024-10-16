@@ -21,7 +21,7 @@ function App() {
   ];
   return (
     <div>
-        <FormaBlock  />
+        <FormaBlock />
         <Cost costs={costs}></Cost>
     </div>
   );
