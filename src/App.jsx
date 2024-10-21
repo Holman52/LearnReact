@@ -21,12 +21,9 @@ function App() {
     }
   ];
 
-      const [cost, setCost] = useState(INITIAL_COST)
-    const AddCostHandler = (Cost) =>{
-      console.log(`1`)
-        setCost((costData) => {
-         return [cost, ...costData]
-        })
+      const [Cost, setCost] = useState(INITIAL_COST)
+    const AddCostHandler = (CostData) =>{
+        setCost(CostData)
     }
 
   return (
