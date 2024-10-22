@@ -22,14 +22,17 @@ function App() {
   ];
 
       const [Cost, setCost] = useState(INITIAL_COST)
-    const AddCostHandler = (CostData) =>{
-        setCost(CostData)
-    }
+
+      const AddCostHandler = (CostData) =>{
+        setCost((prevCost) => {
+          return [CostData, ...prevCost]
+        })
+      }
 
   return (
     <div>
         <FormaBlock onAddCost={AddCostHandler} />
-        <Cost costs={INITIAL_COST}></Cost>
+        <Cost costs={Cost}></Cost>
     </div>
   );
 }

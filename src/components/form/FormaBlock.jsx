@@ -1,9 +1,9 @@
 import Forma from "./Forma"
 import './FormaBlock.css'
 
- function FormaBlock() {
+ function FormaBlock(props) {
 
-  const  onSaveDataHandler =(props, CostData) =>{  // берёт значение с Forma 'costData'
+  const  onSaveDataHandler =(CostData) =>{  // берёт значение с Forma 'costData'
     props.onAddCost(CostData)
   }
 

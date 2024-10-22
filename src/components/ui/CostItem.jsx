@@ -12,7 +12,7 @@ function CostItem(props) {
         <Card className='cost-item'>
          <CostDate date={props.date}></CostDate>
             <div className='cost-item__description'>
-                <div className='description__product'>{product}</div>
+                <div className='description__product'>{props.product}</div>
                 <div className='description__price'>${props.price}</div>
                 <button onClick={newProductHandler}>Изменить продукт</button>
             </div>
