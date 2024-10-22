@@ -1,8 +1,9 @@
 import Cost from "./components/ui/Cost";
 import FormaBlock from "./components/form/FormaBlock";
+import React, { useState } from "react";
 
 function App() {
-  const costs = [
+  const INITIAL_COST = [
     {
       date: new Date(2024, 10, 1),
       product: 'Телефон',
@@ -19,10 +20,16 @@ function App() {
       price: 900,
     }
   ];
+
+      const [Cost, setCost] = useState(INITIAL_COST)
+    const AddCostHandler = (CostData) =>{
+        setCost(CostData)
+    }
+
   return (
     <div>
-        <FormaBlock />
-        <Cost costs={costs}></Cost>
+        <FormaBlock onAddCost={AddCostHandler} />
+        <Cost costs={INITIAL_COST}></Cost>
     </div>
   );
 }

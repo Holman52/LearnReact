@@ -3,8 +3,8 @@ import './FormaBlock.css'
 
  function FormaBlock() {
 
-  const  onSaveDataHandler =(InputCostData) =>{  // берёт значение с Forma 'costData'
-    console.log(InputCostData)
+  const  onSaveDataHandler =(props, CostData) =>{  // берёт значение с Forma 'costData'
+    props.onAddCost(CostData)
   }
 
    return (
