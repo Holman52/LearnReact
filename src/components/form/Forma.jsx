@@ -23,8 +23,8 @@ function Forma(props) {
     event.preventDefault();
 
     const costData = {
-        price: InputPrice,
         product: InputProduct,
+        price: InputPrice,
         date: new Date(InputDate)
     };
     props.onSaveData(costData); // передаёт значение в FormaBlock компонент

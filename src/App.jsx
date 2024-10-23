@@ -5,26 +5,27 @@ import React, { useState } from "react";
 function App() {
   const INITIAL_COST = [
     {
-      date: new Date(2024, 10, 1),
       product: 'Телефон',
+      date: new Date(2024, 10, 1),
       price: 700,
     },
     {
-      date: new Date(2023, 11, 22),
       product: 'Ноут',
+      date: new Date(2023, 11, 22),
       price: 890,
     },
     {
-      date: new Date(2022, 9, 14),
       product: 'ПК',
+      date: new Date(2022, 9, 14),
       price: 900,
     }
   ];
 
-      const [Cost, setCost] = useState(INITIAL_COST)
-
+      const [Costs, setCosts] = useState(INITIAL_COST)
+      
       const AddCostHandler = (CostData) =>{
-        setCost((prevCost) => {
+        setCosts((prevCost) => {
+          console.log(Costs)
           return [CostData, ...prevCost]
         })
       }
@@ -32,7 +33,7 @@ function App() {
   return (
     <div>
         <FormaBlock onAddCost={AddCostHandler} />
-        <Cost />
+        <Cost costs={Costs}></Cost>
     </div>
   );
 }

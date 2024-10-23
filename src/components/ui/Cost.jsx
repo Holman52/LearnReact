@@ -13,10 +13,10 @@ function Cost(props){
     <div className="main">
     <CostsFilter onSelectionYear={selectionYearHandler}/>
     <Card className="cost">
-    {props.costs.map(cost =>
-      <CostItem date= {cost.date}
-        product={cost.product}
-        price={cost.price}></CostItem>
+    {props.costs.map(costs =>
+      <CostItem date= {costs.date}
+        product={costs.product}
+        price={costs.price}></CostItem>
       )}
         </Card>
         </div>
