@@ -32,7 +32,7 @@ function App() {
   return (
     <div>
         <FormaBlock onAddCost={AddCostHandler} />
-        <Cost costs={Cost}></Cost>
+        <Cost />
     </div>
   );
 }

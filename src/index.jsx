@@ -3,6 +3,6 @@ import './index.css';
 import App from './App';
 import { createRoot } from 'react-dom/client';
 
-console.log('s')
-const root = createRoot(document.getElementById("root"))
+const domNode = document.getElementById('root');
+const root = createRoot(domNode);
 root.render(<App />);
