@@ -1,13 +1,10 @@
 import "./CostItem.css"
 import CostDate from "./CostDate"
 import Card from "../Card"
-import React,{ useState } from "react"
 
 function CostItem(props) {
-    // const [props.product, setProduct] = useState(props.product)
-    // const newProductHandler =() => {
-    //     setProduct("new")
-    // }
+
+
     return (
         <Card className='cost-item'>
          <CostDate date={props.date}></CostDate>
