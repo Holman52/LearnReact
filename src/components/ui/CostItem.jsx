@@ -11,7 +11,6 @@ function CostItem(props) {
             <div className='cost-item__description'>
                 <div className='description__product'>{props.product}</div>
                 <div className='description__price'>${props.price}</div>
-                {/* <button>Изменить продукт</button> */}
             </div>
         </Card>
     )

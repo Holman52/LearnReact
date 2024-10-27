@@ -1,4 +1,4 @@
-import CostItem from "./CostItem";
+import ConditionsCost from "./ConditionsCost";
 import "./Cost.css"
 import Card from "../Card";
 import CostsFilter from "./CostsFilter";
@@ -16,19 +16,12 @@ const FilterYear = props.costs.filter(cost =>{
 
  return(
     <div className="main">
-    <CostsFilter year={SelectionYear}
-      onSelectionYear={ChangeYear}
-    />
-    <Card className="cost">
-    {FilterYear.map(costs =>
-      <CostItem 
-        key={costs.id}
-        date= {costs.date}
-        product={costs.product}
-        price={costs.price}></CostItem>
-      )}
-        </Card>
-        </div>
+      <CostsFilter year={SelectionYear}
+      onSelectionYear={ChangeYear}/>
+      <Card className="cost">
+        <ConditionsCost cost={FilterYear}/>
+      </Card>
+    </div>
  )
 }
 export default Cost
