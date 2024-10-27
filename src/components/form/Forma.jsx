@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import './Forma.css'
+import FormaBlock from './FormaBlock';
 
 function Forma(props) {
 
  const [InputProduct, setInputProduct] = useState('');
  const [InputPrice, setInputPrice] = useState('');
  const [InputDate, setInputDate] = useState('');
+ const [RemoveForm, setRemoveForm] = useState(false);
 
  const productChangeHandler = (event)=>{
     setInputProduct(event.target.value)
@@ -32,8 +34,13 @@ function Forma(props) {
     setInputPrice('');
     setInputDate('');
  }
+const RemoveFormHandler = () =>{
+   setRemoveForm(true)
+}
+
   return (
-     <form onSubmit={SubmitHandler}>
+     <div>
+            {!RemoveForm ? ( <form onSubmit={SubmitHandler}>
         <div className="NewCost_Dateils">
             <div className="NewCost_Data">
                 <label>Название</label>
@@ -51,9 +58,13 @@ function Forma(props) {
                  onChange={dateChangeHandler} />
             </div>
             <button className="add" type='submit'>Добавить расходы</button>
-            <button>Отмена</button>
+               <button onClick={props.onRemoveForm}>Отмена</button>
+               </div>
+             </form>
+               ) :
+            (<FormaBlock />)}
         </div>
-    </form>
+
   )
  }
  export default Forma
