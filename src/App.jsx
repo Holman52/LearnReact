@@ -2,6 +2,7 @@ import Cost from "./components/ui/Cost";
 import FormaBlock from "./components/form/FormaBlock";
 import React, { useState } from "react";
 
+
 function App() {
   const INITIAL_COST = [
     {
