@@ -11,7 +11,6 @@ const DiagramBar = (props) =>{
         )
     }
 
-    console.log(FillBarValue)
     return <div className='diagram-bar'>
                 <div className='diagram-bar__inner'>
                  <div className='diagram-bar__fill' style={{height:FillBarValue+'%'}}></div>

@@ -17,13 +17,13 @@ const ChangeYear = (year) =>{
 const FilterYear = props.costs.filter(cost =>{
   return cost.date.getFullYear().toString() === SelectionYear
 });
-const costs = props.costs
+// const costs = props.costs
  return(
     <div className="main">
       <CostsFilter year={SelectionYear}
       onSelectionYear={ChangeYear}/>
       <Card className="cost">
-        <CostDiagram  costs={costs}/>
+        <CostDiagram  costs={FilterYear}/>
         <ConditionsCost cost={FilterYear}/>
       </Card>
     </div>
