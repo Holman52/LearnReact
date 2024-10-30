@@ -6,13 +6,13 @@ const Diagram = (props) =>{
  const valueMonth = props.dataSets.map(date =>
     date.value 
  )
- const maxValue = Math.max(valueMonth)
-
+ const maxValue = Math.max(...valueMonth)
+ 
     return <div className="diagram"> 
         {props.dataSets.map(dataSet =>
-        <DiagramBar value={dataSet.vale}
+        <DiagramBar value={dataSet.value}
              key={dataSet.label}
-             maxValue={null}
+             maxValue={maxValue}
              label={dataSet.label}/>
         )}
     </div>

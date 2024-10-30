@@ -29,7 +29,7 @@ function App() {
       
       const AddCostHandler = (CostData) =>{
         setCosts((prevCost) => {
-          console.log(Costs)
+          // console.log(Costs)
           return [CostData, ...prevCost]
         })
       }
