@@ -7,3 +7,9 @@
   justify-content: space-around;
   height: 10rem;
 }
+/* @media (max-width: 576px) {
+  .diagram{
+    padding: 10px;
+    width: 23rem;
+  }
+} */
