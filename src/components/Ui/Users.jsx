@@ -4,8 +4,7 @@ const Users = (props) =>{
     return(
       <ul>
         {props.user.map((Data) => (
-            <UserItem  
-                // key = {Data.id}
+            <UserItem 
                 Name= {Data.Name}
                 Age= {Data.Age}>
            
