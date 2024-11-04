@@ -16,27 +16,29 @@ const FormaBlock = (props) => {
     setInputAge(event.target.value)
  };
   
- const data = {
-    Age: InputAge,
-    Name: InputName
+ const SubmitHandler = (event)=>{
+    event.preventDefault()
+    
+    const data = {
+        Age: InputAge,
+        Name: InputName
+     }
+    props.onSaveData(data)
  }
-props.onSaveData(data)
-setInputAge('')
-setInputAge('')
-setInputAge('')
+
  
     return (
         <div className='Forma-User'>
-            <form>
+            <form onSubmit={SubmitHandler}>
                 <div className='User-Name'>
                     <label>Имя</label>
                     <input type='text' placeholder='Введите имя'
-                     onChangeName={NameChangeHandler}></input>
+                     onChange={NameChangeHandler}></input>
                 </div>
                 <div className='User-age'>
                     <label>Возраст</label>
                     <input type='number' placeholder='Введите возраст'
-                     onChangeAge={AgeChangeHandler}></input>
+                     onChange={AgeChangeHandler}></input>
                 </div>
                 <button type='submit'>Добавить пользователя</button>
             </form>

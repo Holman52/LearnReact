@@ -6,22 +6,15 @@ import './App.css';
 
 function App() {
 
-  // const UserData = [
-  //   {
-  //     id: Math.random(),
-  //     Name: '',
-  //     Age: '',
-  //   }
-  // ]
 
   const [User, setUsers] = useState()
       
   const AddUserHandler = (data) =>{
     setUsers((prevUser) => {
+      console.log(User)
       return [data, ...prevUser]
     })
   }
- 
 
   return (
     <div className='content'>
