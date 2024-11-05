@@ -1,4 +1,3 @@
-import './UserItem.css'
 
 
 const UserItem = (props) => {

@@ -1,4 +1,5 @@
-import './FormaBlock.css'
+import styles from './FormaBlock.module.css'
+import Card from '../Ui/Card';
 import React, {useState} from 'react';
 
 const FormaBlock = (props) => {
@@ -24,25 +25,21 @@ const FormaBlock = (props) => {
         Name: InputName
      }
     props.onSaveData(data)
+    console.log(data)
  }
 
- 
     return (
-        <div className='Forma-User'>
+        <Card className={styles.input}>
             <form onSubmit={SubmitHandler}>
-                <div className='User-Name'>
                     <label>Имя</label>
                     <input type='text' placeholder='Введите имя'
                      onChange={NameChangeHandler}></input>
-                </div>
-                <div className='User-age'>
                     <label>Возраст</label>
                     <input type='number' placeholder='Введите возраст'
                      onChange={AgeChangeHandler}></input>
-                </div>
                 <button type='submit'>Добавить пользователя</button>
             </form>
-        </div>
+        </Card>
     )
 }
 

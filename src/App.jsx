@@ -6,8 +6,15 @@ import './App.css';
 
 function App() {
 
+  const InitialUser = [
+    // {
+    //   id:1,
+    //   Name: 'Ivan',
+    //   Age: 18,
+    // }
+  ]
 
-  const [User, setUsers] = useState()
+  const [User, setUsers] = useState(InitialUser)
       
   const AddUserHandler = (data) =>{
     setUsers((prevUser) => {
