@@ -1,3 +1,7 @@
+.formaBlock{
+  width: 60%;
+  background-color:  #116466;
+}
 .input {
     margin: 2rem auto;
     padding: 2rem;
@@ -9,6 +13,7 @@
     display: block;
     font-weight: bold;
     margin-bottom: 0.7rem;
+    color: azure;
   }
   
   .input input {
@@ -18,6 +23,7 @@
     border: 1px solid #ccc;
     padding: 0.1rem;
     margin-bottom: 0.7rem;
+    background-color: #D1E8E2;
   }
   
   .input input:focus {

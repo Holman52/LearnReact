@@ -1,6 +1,7 @@
 import styles from './FormaBlock.module.css'
 import Card from '../Ui/Card';
 import React, {useState} from 'react';
+import Button from '../Ui/Button';
 
 const FormaBlock = (props) => {
     
@@ -16,6 +17,12 @@ const FormaBlock = (props) => {
  const AgeChangeHandler = (event) =>{
     setInputAge(event.target.value)
  };
+//  if(InputAge === 0 || InputName === 0){
+//    return;
+//  }
+//  if(InputAge < 1){
+//    return;
+//  }
   
  const SubmitHandler = (event)=>{
     event.preventDefault()
@@ -26,18 +33,20 @@ const FormaBlock = (props) => {
      }
     props.onSaveData(data)
     console.log(data)
+    setInputAge('')
+    setInputName('')
  }
 
     return (
-        <Card className={styles.input}>
+        <Card className={`${styles.input} ${styles.formaBlock}`}>
             <form onSubmit={SubmitHandler}>
                     <label>Имя</label>
                     <input type='text' placeholder='Введите имя'
-                     onChange={NameChangeHandler}></input>
+                     onChange={NameChangeHandler} value={InputName} required></input>
                     <label>Возраст</label>
                     <input type='number' placeholder='Введите возраст'
-                     onChange={AgeChangeHandler}></input>
-                <button type='submit'>Добавить пользователя</button>
+                     onChange={AgeChangeHandler}  value={InputAge}  required></input>
+                <Button type='submit'>Добавить пользователя</Button>
             </form>
         </Card>
     )

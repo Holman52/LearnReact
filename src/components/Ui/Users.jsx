@@ -4,11 +4,13 @@ const Users = (props) =>{
     return(
       <ul>
         {props.user.map((Data) => (
-            <UserItem 
-                Name= {Data.Name}
-                Age= {Data.Age}>
+            <li>
+                <UserItem 
+                 Name= {Data.Name}
+                 Age= {Data.Age}>
            
                 </UserItem>
+            </li>
         ))}
         </ul>
     )

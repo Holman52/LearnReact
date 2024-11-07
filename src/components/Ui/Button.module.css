@@ -1,0 +1,22 @@
+.button {
+    width: 100%;
+    font: inherit;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    color: rgb(0, 0, 0);
+    background: #D9B08C;
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(50, 50, 50, 0.25);
+    cursor: pointer;
+  }
+  
+  .button:focus {
+    outline: none;
+  }
+  
+  .button:hover,
+  .button:active {
+    background: #D9B08C;
+    box-shadow: 0 0 8px rgba(50, 50, 50, 0.25);
+  }
+  
