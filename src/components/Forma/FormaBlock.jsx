@@ -28,11 +28,10 @@ const FormaBlock = (props) => {
     event.preventDefault()
     
     const data = {
-        Age: InputAge,
-        Name: InputName
+        age: InputAge,
+        name: InputName
      }
     props.onSaveData(data)
-    console.log(data)
     setInputAge('')
     setInputName('')
  }

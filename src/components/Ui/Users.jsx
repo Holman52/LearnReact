@@ -1,18 +1,17 @@
-import UserItem from "./UserItem";
+import styles from './Users.module.css'
+import Card from './Card'
 
 const Users = (props) =>{
     return(
+    <Card className={styles.user}>
       <ul>
-        {props.user.map((Data) => (
+        {props.user.map((data) => (
             <li>
-                <UserItem 
-                 Name= {Data.Name}
-                 Age= {Data.Age}>
-           
-                </UserItem>
+                {data.name} - {data.age} years
             </li>
         ))}
         </ul>
+    </Card>
     )
 }
 
