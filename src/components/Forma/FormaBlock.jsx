@@ -4,49 +4,49 @@ import React, {useState} from 'react';
 import Button from '../Ui/Button';
 import ErrorModal from '../Ui/ErrorModal';
 const FormaBlock = (props) => {
-    
-    
+
  const [InputName, setInputName] = useState('');
  const [InputAge, setInputAge] = useState('');
- 
+ const [Error, setError] = useState(false)
 
  const NameChangeHandler = (event)=>{
-    setInputName(event.target.value)
- };
- 
+   setInputName(event.target.value)
+   }
  const AgeChangeHandler = (event) =>{
-    setInputAge(event.target.value)
- };
-//  if(InputAge === 0 || InputName === 0){
-//    return;
-//  }
-//  if(InputAge < 1){
-//    return;
-//  }
-  
+   setInputAge(event.target.value)
+   }
  const SubmitHandler = (event)=>{
-    event.preventDefault()
-    
-    const data = {
-        age: InputAge,
-        name: InputName
-     }
-    props.onSaveData(data)
-    setInputAge('')
-    setInputName('')
- }
-
-    return (
+  event.preventDefault()
+    if(InputName.trim().length === 0){
+      setError(true)
+       return;
+    }
+    if(InputAge < 1 || InputAge.trim().length === 0){
+      setError(true)
+       return;
+      }
+      const data = {
+          age: InputAge,
+          name: InputName
+       }
+      props.onSaveData(data)
+     setInputAge('')
+     setInputName('')
+     setError(false)
+   }
+   console.log(InputName.length)
+   console.log(Error.length)
+ return (
     <div>
-      <ErrorModal />
-       <Card className={`${styles.input} ${styles.formaBlock}`}>
+    {Error && <ErrorModal />} 
+      <Card className={`${styles.input} ${styles.formaBlock}`}>
             <form onSubmit={SubmitHandler}>
                     <label>Имя</label>
                     <input type='text' placeholder='Введите имя'
-                     onChange={NameChangeHandler} value={InputName} required></input>
+                     onChange={NameChangeHandler} value={InputName}></input>
                     <label>Возраст</label>
                     <input type='number' placeholder='Введите возраст'
-                     onChange={AgeChangeHandler}  value={InputAge}  required></input>
+                     onChange={AgeChangeHandler}  value={InputAge}></input>
                 <Button type='submit'>Добавить пользователя</Button>
             </form>
         </Card>
