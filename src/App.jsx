@@ -11,7 +11,7 @@ function App() {
       
   const AddUserHandler = (data) =>{
     setUsers((prevUser) => {
-      return [  data, ...prevUser]
+      return [ ...prevUser,  data]
     })
   }
 

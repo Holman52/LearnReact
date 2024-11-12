@@ -2,7 +2,7 @@ import styles from './FormaBlock.module.css'
 import Card from '../Ui/Card';
 import React, {useState} from 'react';
 import Button from '../Ui/Button';
-
+import ErrorModal from '../Ui/ErrorModal';
 const FormaBlock = (props) => {
     
     
@@ -37,7 +37,9 @@ const FormaBlock = (props) => {
  }
 
     return (
-        <Card className={`${styles.input} ${styles.formaBlock}`}>
+    <div>
+      <ErrorModal />
+       <Card className={`${styles.input} ${styles.formaBlock}`}>
             <form onSubmit={SubmitHandler}>
                     <label>Имя</label>
                     <input type='text' placeholder='Введите имя'
@@ -48,6 +50,7 @@ const FormaBlock = (props) => {
                 <Button type='submit'>Добавить пользователя</Button>
             </form>
         </Card>
+      </div>
     )
 }
 
