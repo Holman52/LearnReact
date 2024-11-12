@@ -32,14 +32,15 @@ const FormaBlock = (props) => {
       props.onSaveData(data)
      setInputAge('')
      setInputName('')
-     setError(false)
    }
-   console.log(InputName.length)
-   console.log(Error.length)
+  const CloseModalHandler = () =>{
+    setError(false)
+  }
+   
  return (
     <div>
-    {Error && <ErrorModal />} 
-      <Card className={`${styles.input} ${styles.formaBlock}`}>
+    {Error && <ErrorModal onCloseModal={CloseModalHandler}/>} 
+      <Card className={styles.input}>
             <form onSubmit={SubmitHandler}>
                     <label>Имя</label>
                     <input type='text' placeholder='Введите имя'

@@ -2,9 +2,11 @@ import Card from "./Card"
 import Button from "./Button"
 import styles from "./ErrorModal.module.css"
 
-const ErrorModal = () => {  
- return (<div className={styles.backdrop}>
-    <Card className={styles.modal}>
+const ErrorModal = (props) => {  
+
+    
+ return (<div className={styles.backdrop} onClick={props.onCloseModal}>
+    <Card className={styles.modal} >
         <header className={styles.header}>
             <h1>Ошибка</h1>
         </header>
@@ -12,7 +14,7 @@ const ErrorModal = () => {
             <p>Введите все данные</p>
         </div>
         <footer className={styles.footer}>
-            <Button>Закрыть</Button>
+            <Button onClick={props.onCloseModal}>Закрыть</Button>
         </footer>
     </Card>
  </div>

@@ -1,13 +1,10 @@
-.formaBlock{
-  width: 60%;
-  background-color:  #116466;
-}
 .input {
     margin: 2rem auto;
     padding: 2rem;
     width: 90%;
-    max-width: 30rem;
-  }
+    max-width: 30rem; 
+    background-color:  #116466;
+   }
   
   .input label {
     display: block;
