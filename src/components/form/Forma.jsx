@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import './Forma.css'
 import FormaBlock from './FormaBlock';
 
@@ -39,7 +39,7 @@ const RemoveFormHandler = () =>{
 }
 
   return (
-     <div>
+     <Fragment>
             {!RemoveForm ? ( <form onSubmit={SubmitHandler}>
         <div className="NewCost_Dateils">
             <div className="NewCost_Data">
@@ -63,7 +63,7 @@ const RemoveFormHandler = () =>{
              </form>
                ) :
             (<FormaBlock />)}
-        </div>
+        </Fragment>
 
   )
  }

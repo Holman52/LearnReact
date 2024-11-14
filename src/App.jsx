@@ -1,6 +1,6 @@
 import Cost from "./components/ui/Cost";
 import FormaBlock from "./components/form/FormaBlock";
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 
 
 function App() {
@@ -35,10 +35,10 @@ function App() {
       }
 
   return (
-    <div>
+    <Fragment>
         <FormaBlock onAddCost={AddCostHandler} />
         <Cost costs={Costs}></Cost>
-    </div>
+    </Fragment>
   );
 }
 
