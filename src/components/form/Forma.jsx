@@ -1,38 +1,28 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useRef, useState } from 'react'
 import './Forma.css'
 import FormaBlock from './FormaBlock';
 
 function Forma(props) {
+  const productRef = useRef()
+  const priceRef = useRef()
+  const dateRef = useRef()
 
- const [InputProduct, setInputProduct] = useState('');
- const [InputPrice, setInputPrice] = useState('');
- const [InputDate, setInputDate] = useState('');
  const [RemoveForm, setRemoveForm] = useState(false);
-
- const productChangeHandler = (event)=>{
-    setInputProduct(event.target.value)
- };
- 
- const priceChangeHandler = (event) =>{
-    setInputPrice(event.target.value)
- };
- 
- const dateChangeHandler = (event)=>{
-    setInputDate(event.target.value)
- };
 
  const SubmitHandler = (event) =>{
     event.preventDefault();
-
+    const InputPriceName = priceRef.current.value
+    const InputProductName = productRef.current.value
+    const InputDateName =dateRef.current.value
     const costData = {
-        product: InputProduct,
-        price: InputPrice,
-        date: new Date(InputDate)
+        product: InputProductName,
+        price: InputPriceName,
+        date: new Date(InputDateName)
     };
     props.onSaveData(costData); // передаёт значение в FormaBlock компонент
-    setInputProduct('');
-    setInputPrice('');
-    setInputDate('');
+    priceRef.current.value = ''
+    productRef.current.value = ''
+    dateRef.current.value = ''
  }
 const RemoveFormHandler = () =>{
    setRemoveForm(true)
@@ -44,18 +34,15 @@ const RemoveFormHandler = () =>{
         <div className="NewCost_Dateils">
             <div className="NewCost_Data">
                 <label>Название</label>
-                <input type="text" value={InputProduct}
-                 onChange={productChangeHandler} />
+                <input type="text"  ref={productRef} />
             </div>
             <div className="NewCost_Data">
                 <label>Цена</label>
-                <input type="number" value={InputPrice}
-                onChange={priceChangeHandler}/>
+                <input type="number"  ref={priceRef}/>
             </div>
             <div className="NewCost_Data">
                 <label>Дата</label>
-                <input type="date" value={InputDate}
-                 onChange={dateChangeHandler} />
+                <input type="date" ref={dateRef}/>
             </div>
             <button className="add" type='submit'>Добавить расходы</button>
                <button onClick={props.onRemoveForm}>Отмена</button>
